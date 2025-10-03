@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .form-container { max-width: 600px; margin: auto; background: #fff; padding: 2em; border-radius: 8px; }
+    .form-container button { background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; }
+    .form-container input { width: 100%; padding: 8px; margin-bottom: 1em; box-sizing: border-box; }
+</style>
+
+<div class="form-container">
+    <h2>Add New Patient and Images</h2>
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        
+        <button type="submit">Create Patient</button>
+    </form>
+</div>
+{% endblock %}
